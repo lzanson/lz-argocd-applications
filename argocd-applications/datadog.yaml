@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: datadog
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://helm.datadoghq.com
+    path: datadog
+    targetRevision: 3.49.7
+    chart: datadog
+    helm:
+      valueFiles:
+      - values.yaml
+      valuesObject:
+        datadog:
+          # placeholder - need to figure out how to send to DD without polluting other envs.
+          apiKey: '1234567'
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: datadog
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+
