@@ -9,7 +9,6 @@ spec:
     repoURL: https://github.com/lzanson/lz-argocd-applications.git
     path: helm-local/lz-kong
     targetRevision: HEAD
-    chart: ingress
     helm:
       valueFiles:
       - values.yaml

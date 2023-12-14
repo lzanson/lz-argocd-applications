@@ -1,15 +1,13 @@
 apiVersion: v2
 name: lz-kong
-description: A Helm chart for Kubernetes
+description: A Helm chart for Kong
 
-# A chart can be either an 'application' or a 'library' chart.
-#
-# Application charts are a collection of templates that can be packaged into versioned archives
-# to be deployed.
-#
-# Library charts provide useful utilities or functions for the chart developer. They're included as
-# a dependency of application charts to inject those utilities and functions into the rendering
-# pipeline. Library charts do not define any templates and therefore cannot be deployed.
+# Installs Kong OSS (open-source) which is what we install at Legalzoom. 
+# Legalzoom's Kong install is same as public, but it adds a custom plugin using their Golang PDK to manage authentication.
+
+# See this Kong install guide: https://docs.konghq.com/kubernetes-ingress-controller/latest/get-started/
+
+# This chart installs the Kong CRDs, a Kong GatewayClass, and Kong ingress Helm chart.
 type: application
 
 # This is the chart version. This version number should be incremented each time you make changes
