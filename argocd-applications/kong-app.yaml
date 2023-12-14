@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://charts.konghq.com/
-    path: ingress
-    targetRevision: 0.10.1
+    repoURL: https://github.com/lzanson/lz-argocd-applications.git
+    path: helm-local/lz-kong
+    targetRevision: HEAD
     chart: ingress
     helm:
       valueFiles:
